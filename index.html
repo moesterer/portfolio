@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#f7f2e8" />
+  <meta name="color-scheme" content="light" />
+  <meta name="description" content="Madeleine Oesterer — designer and creative technologist working across web, digital media, storytelling, and visual design." />
+  <title>Madeleine Oesterer — Design + Code + Story</title>
+  <link rel="icon" type="image/png" href="images/favicon-star.png" />
+  <link rel="apple-touch-icon" href="images/favicon-star.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bungee&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@500;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  <link rel="stylesheet" href="styles.css?v=20260930-5" />
+</head>
+<body>
+<div class="loader" aria-hidden="true">
+    <div class="loader-mark">
+      <span class="shooting-star shooting-star--loader"></span>
+      <span class="loader-logo">MXO</span>
+    </div>
+    <p>LOADING</p>
+  </div>
+
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Madeleine Oesterer home">
+      <span class="shooting-star shooting-star--brand" aria-hidden="true"></span>
+      <span class="brand-logo">MXO</span>
+    </a>
+
+    <nav class="main-nav" aria-label="Primary navigation">
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <button class="menu-toggle" aria-expanded="false" aria-controls="mobile-nav">MENU</button>
+  </header>
+
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+    <a href="#work"><span>Work</span></a>
+    <a href="#about"><span>About</span></a>
+    <a href="#contact"><span>Contact</span></a>
+  </nav>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <h1 id="hero-title" class="hero-title" aria-label="Portfolio">
+            <span class="hero-first" data-reveal-text="PORTFOLIO">PORTFOLIO</span>
+          </h1>
+
+          <p class="hero-intro">Madeleine Oesterer, a designer creating memorable digital experiences</p>
+
+          <div class="hero-actions">
+            <a class="button button--dark" href="#work">SEE WORK</a>
+            <a class="text-link" href="#about">ABOUT ME</a>
+          </div>
+        </div>
+
+        <div class="hero-art-wrap" aria-hidden="true">
+          <img class="hero-portrait-art" src="images/hero-vector.png" alt="" />
+          <img class="hero-star-img hero-star-img--yellow" src="images/star-yellow.png" alt="" />
+          <img class="hero-star-img hero-star-img--blue" src="images/star-blue.png" alt="" />
+        </div>
+      </div>
+
+      <div class="hero-bottom-strip">
+        <span>WEB • DIGITAL ADS • MEDIA</span>
+      </div>
+    </section>
+
+    <section class="work-section" id="work" aria-labelledby="work-title">
+      <div class="section-heading section-heading--work">
+        <div class="work-title-row">
+          <h2 id="work-title">WORK</h2>
+          <span class="work-title-stars" aria-hidden="true">
+            <img src="images/star-yellow.png" alt="" />
+            <img src="images/star-yellow.png" alt="" />
+            <img src="images/star-yellow.png" alt="" />
+          </span>
+        </div>
+      </div>
+
+      <div class="gallery-frame">
+        <div class="work-gallery">
+          <article class="project-card" data-video-src="videos/longevity.mp4">
+            <div class="project-media" tabindex="0" aria-label="Preview Capstone Project — Longevity Interactive Narrative">
+              <img class="project-image" src="images/longevity.jpeg" alt="Longevity interactive narrative project thumbnail" />
+              <div class="video-layer" aria-hidden="true"></div>
+              <span class="preview-label">HOVER TO PLAY</span>
+            </div>
+            <div class="project-meta">
+              <h3>Capstone Project — Longevity Interactive Narrative</h3>
+              <p>Storytelling • Interaction</p>
+              <div class="project-links">
+                <a class="project-site-link" href="https://moesterer.github.io/des157b/capstone/project/index.html" target="_blank" rel="noopener noreferrer">VISIT SITE</a>
+                <span class="project-site-note">(NOT MOBILE FRIENDLY)</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card" data-video-src="videos/scurry.mp4">
+            <div class="project-media" tabindex="0" aria-label="Preview Scurry startup website, app, and mascot design">
+              <img class="project-image" src="images/scurry.jpeg" alt="Scurry startup website and app design thumbnail" />
+              <div class="video-layer" aria-hidden="true"></div>
+              <span class="preview-label">HOVER TO PLAY</span>
+            </div>
+            <div class="project-meta">
+              <h3>Scurry — Startup Website, App + Mascot</h3>
+              <p>Front-end • App design • Mascot • Brand visual language</p>
+              <div class="project-links">
+                <a class="project-site-link" href="https://moesterer.github.io/scurry/index.html" target="_blank" rel="noopener noreferrer">VISIT SITE</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card project-card--coming-soon" data-video-src="videos/sonaraConcept.mp4" data-project-coming-soon="sonara">
+            <div class="project-media" tabindex="0" aria-label="Preview Sonara classical jazz music festival concept">
+              <img class="project-image" src="images/sonara-thumb.jpeg" alt="Sonara classical jazz music festival brand concept thumbnail" />
+              <div class="video-layer" aria-hidden="true"></div>
+              <span class="preview-label">HOVER TO PLAY</span>
+            </div>
+            <div class="project-meta">
+              <h3>Sonara — Classical Jazz Festival Concept</h3>
+              <p>Brand identity • Logo • Merchandise • Collaborations • Digital ads</p>
+              <div class="project-links">
+                <button class="project-site-link project-coming-soon-link" type="button">VIEW PROJECT</button>
+                <span class="project-site-note">(PAGE COMING SOON)</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card" data-video-src="videos/magicGirl.mp4">
+            <div class="project-media" tabindex="0" aria-label="Preview Magical Girl Battle Game">
+              <img class="project-image" src="images/magicGirl.jpeg" alt="Magical Girl Battle Game thumbnail" />
+              <div class="video-layer" aria-hidden="true"></div>
+              <span class="preview-label">HOVER TO PLAY</span>
+            </div>
+            <div class="project-meta">
+              <h3>Magical Girl Battle Game</h3>
+              <p>Visual design • Illustration • Game mechanics • Interaction</p>
+              <div class="project-links">
+                <a class="project-site-link" href="https://moesterer.github.io/DES157A-WI2026/game/v2-final-version/index.html" target="_blank" rel="noopener noreferrer">VISIT SITE</a>
+                <span class="project-site-note">(NOT MOBILE FRIENDLY)</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card" data-video-src="videos/caffine.mp4">
+            <div class="project-media" tabindex="0" aria-label="Preview Caffeine Cravings data visualization">
+              <img class="project-image" src="images/caffine.jpeg" alt="Caffeine Cravings data visualization thumbnail" />
+              <div class="video-layer" aria-hidden="true"></div>
+              <span class="preview-label">HOVER TO PLAY</span>
+            </div>
+            <div class="project-meta">
+              <h3>Caffeine Cravings — Data Visualization</h3>
+              <p>Data visualization • Interactive design • Working with data</p>
+              <div class="project-links">
+                <a class="project-site-link" href="https://moesterer.github.io/des157b/studio2/index.html" target="_blank" rel="noopener noreferrer">VISIT SITE</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card" data-video-src="videos/portal.mp4">
+            <div class="project-media" tabindex="0" aria-label="Preview Portal Page visual effect and code project">
+              <img class="project-image" src="images/landing.jpeg" alt="Portal Page visual effect project thumbnail" />
+              <div class="video-layer" aria-hidden="true"></div>
+              <span class="preview-label">HOVER TO PLAY</span>
+            </div>
+            <div class="project-meta">
+              <h3>Portal Page — Illustrated + Coded Visual Effect</h3>
+              <p>Illustration • Visual effects</p>
+              <div class="project-links">
+                <a class="project-site-link" href="https://moesterer.github.io/des157b/" target="_blank" rel="noopener noreferrer">VISIT SITE</a>
+                <span class="project-site-note">(NOT MOBILE FRIENDLY)</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card project-card--static">
+            <div class="project-media project-media--contain" aria-label="Concept Memorial Poster — Ryuichi Sakamoto">
+              <img class="project-image project-image--contain" src="images/memorial-poster.jpeg" alt="Concept memorial poster for Ryuichi Sakamoto" />
+            </div>
+            <div class="project-meta">
+              <h3>Concept Memorial Poster — Ryuichi Sakamoto</h3>
+              <p>Poster design • Photoshop • Photo compositing</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-section" id="about" aria-labelledby="about-title">
+      <div class="about-masthead">
+        <h2 id="about-title" class="about-title">
+          <span>DESIGN WITH A REASON<img class="about-title-star" src="images/star-yellow.png" alt="" aria-hidden="true" /></span>
+        </h2>
+        <p>
+          Visual choices are not just decoration. Every brand, product, or company has a story they want to tell. Each visual decision adds to what the design is trying to convey affecting how a person might feel and reinforces that story.
+        </p>
+      </div>
+
+      <div class="about-grid">
+        <article class="about-card about-card--cream" data-aos="fade-right">
+          <h3>Studies &amp; Specialties</h3>
+          <p>
+            I graduated from UC Davis in 2026 with a B.A. in Design and B.S. in Computer Science. My work sits between visual thinking and technical execution, with a focus on <strong class="specialties-inline">web design, interaction, front-end experiences, digital ads, and digital media.</strong>
+          </p>
+        </article>
+
+        <article class="about-card about-card--blue" data-aos="fade-left">
+          <h3>My Approach</h3>
+          <p>
+            I believe every project has a point of view: brands, products, events, campaigns, and experiences with something they wish to communicate. Whether that be a narrative, an association, or a feeling I summarize that experience as a form of storytelling. Storytelling has always been a driving force in the work I’m proudest of from the interactive logic behind a website to the color palette and layout, all the tiny details are intentional.
+          </p>
+          <p>
+            I grew up loving stories, adventures, and reading, and that instinct followed me into design. I like asking why a detail belongs before deciding what it should look like.
+          </p>
+        </article>
+
+        <article class="about-card about-card--yellow" data-aos="fade-up-right">
+          <h3>Across Mediums</h3>
+          <div class="about-mediums-content">
+            <p>
+              I am flexible and enjoy working across formats, especially when a project can move between design, code, film, editing, motion, and visual storytelling. The medium can change but the goal stays the same: make the experience feel coherent, specific, and memorable.
+            </p>
+            <img class="about-corner-star" src="images/black-star.png" alt="" aria-hidden="true" />
+          </div>
+        </article>
+
+        <div class="hobbies-panel" data-aos="fade-up-left">
+          <div class="hobbies-copy">
+            <h3>What I’m Probably Doing After Work</h3>
+          </div>
+
+          <div class="hobby-list" aria-label="Hobbies">
+            <div class="hobby-item"><img class="hobby-icon-img" src="images/icon-pencil.png" alt="" aria-hidden="true" /><span>Drawing</span></div>
+            <div class="hobby-item"><img class="hobby-icon-img" src="images/icon-cupcake.png" alt="" aria-hidden="true" /><span>Baking</span></div>
+            <div class="hobby-item"><img class="hobby-icon-img" src="images/icon-airplane.png" alt="" aria-hidden="true" /><span>Travel</span></div>
+            <div class="hobby-item"><img class="hobby-icon-img" src="images/icon-camera.png" alt="" aria-hidden="true" /><span>Videography</span></div>
+            <div class="hobby-item"><img class="hobby-icon-img" src="images/icon-book.png" alt="" aria-hidden="true" /><span>Reading</span></div>
+            <div class="hobby-item"><img class="hobby-icon-img" src="images/icon-boba.png" alt="" aria-hidden="true" /><span>Boba</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact" aria-labelledby="contact-title">
+      <div class="contact-art" aria-hidden="true">
+        <img class="contact-phone" src="images/contact-phone.png" alt="" />
+        <div class="contact-stars">
+          <img class="contact-star contact-star--yellow contact-star--small" src="images/star-yellow.png" alt="" />
+          <img class="contact-star contact-star--yellow contact-star--medium" src="images/star-yellow.png" alt="" />
+          <img class="contact-star contact-star--blue" src="images/contact-star-blue.png" alt="" />
+        </div>
+      </div>
+
+      <div class="contact-copy">
+        <h2 id="contact-title">LET'S MAKE SOMETHING</h2>
+        <p>Have a project in mind, a role you think I’d be a good fit for, or just want to say hello? Send me a message! I'm excited to hear from you.</p>
+        <a class="button button--contact" href="mailto:madeleine@oesterer.com">CONTACT ME</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="footer-brand" href="#top" aria-label="Madeleine Oesterer home">
+      <span class="shooting-star shooting-star--footer" aria-hidden="true"></span>
+      <span class="footer-logo">MXO</span>
+    </a>
+
+    <div class="footer-contact">
+      <h2>Contact Me</h2>
+      <a href="https://www.linkedin.com/in/madeleine-o-74a20a18b/" target="_blank" rel="noopener noreferrer"><span>LinkedIn</span></a>
+      <a href="mailto:madeleine@oesterer.com"><span>madeleine@oesterer.com</span></a>
+    </div>
+  </footer>
+
+
+
+  <dialog class="project-coming-soon-modal" id="sonara-coming-soon" aria-labelledby="sonara-modal-title">
+    <button class="project-modal-close" type="button" aria-label="Close project notice">×</button>
+    <p class="project-modal-kicker">SONARA / PROJECT PAGE</p>
+    <h2 id="sonara-modal-title">FULL PROJECT PAGE COMING SOON.</h2>
+    <p>I’m building a dedicated Sonara page with more detailed views of the identity, merchandise, collaborations, mockups, and digital ads.</p>
+    <button class="project-modal-button" type="button">CLOSE</button>
+  </dialog>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="script.js?v=20260930-5"></script>
+  <script>
+    if (window.AOS) {
+      AOS.init({
+        duration: 1500,
+        easing: 'ease-out-cubic',
+        once: true,
+        offset: 85,
+        disable: window.matchMedia('(prefers-reduced-motion: reduce)').matches
+      });
+    }
+  </script>
+</body>
+</html>
