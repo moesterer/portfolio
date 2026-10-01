@@ -5079,3 +5079,38 @@ html.is-short-landscape-phone .mobile-nav {
     align-content: start !important;
   }
 }
+
+/* ---------- MOBILE HORIZONTAL OVERFLOW FIX ---------- */
+/*
+   AOS fade-left / fade-up-left animations temporarily place elements outside
+   the viewport before they animate in. On mobile browsers (especially Safari),
+   that transformed content can enlarge the root scrollable area and expose the
+   html background as a black strip on the right.
+
+   Clip horizontal overflow at the root, and keep mobile AOS fade motion
+   vertical so animated cards never extend past the left/right viewport edges.
+*/
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+@supports (overflow: clip) {
+  html,
+  body {
+    overflow-x: clip;
+  }
+}
+
+@media (max-width: 820px) {
+  [data-aos^="fade"][data-aos^="fade"] {
+    transform: translate3d(0, 32px, 0);
+  }
+
+  [data-aos^="fade"][data-aos^="fade"].aos-animate {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
