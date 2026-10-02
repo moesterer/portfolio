@@ -24,31 +24,76 @@ document.querySelectorAll('[data-reveal-text]').forEach((element) => {
   });
 });
 
-// ---------- Mobile menu ----------
+// ---------- Mobile off-canvas menu ----------
 const menuButton = document.querySelector('.menu-toggle');
 const mobileNav = document.querySelector('.mobile-nav');
+const mobileNavClose = document.querySelector('.mobile-nav-close');
+const mobileNavBackdrop = document.querySelector('.mobile-nav-backdrop');
+let menuScrollY = 0;
 
-function closeMenu() {
-  menuButton?.setAttribute('aria-expanded', 'false');
-  mobileNav?.classList.remove('is-open');
-  document.body.classList.remove('menu-open');
+function lockPageForMenu() {
+  menuScrollY = Math.max(0, window.scrollY || window.pageYOffset || 0);
+  document.documentElement.classList.add('menu-open');
+  document.body.classList.add('menu-open');
+  document.body.style.position = 'fixed';
+  document.body.style.top = `-${menuScrollY}px`;
+  document.body.style.left = '0';
+  document.body.style.right = '0';
+  document.body.style.width = '100%';
 }
 
-menuButton?.addEventListener('click', () => {
-  const open = menuButton.getAttribute('aria-expanded') === 'true';
-  menuButton.setAttribute('aria-expanded', String(!open));
-  mobileNav?.classList.toggle('is-open', !open);
-  document.body.classList.toggle('menu-open', !open);
-});
+function unlockPageFromMenu() {
+  const root = document.documentElement;
+  const previousInlineScrollBehavior = root.style.scrollBehavior;
+
+  root.style.scrollBehavior = 'auto';
+  root.classList.remove('menu-open');
+  document.body.classList.remove('menu-open');
+  document.body.style.position = '';
+  document.body.style.top = '';
+  document.body.style.left = '';
+  document.body.style.right = '';
+  document.body.style.width = '';
+  window.scrollTo({ left: 0, top: menuScrollY, behavior: 'auto' });
+
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      root.style.scrollBehavior = previousInlineScrollBehavior;
+    });
+  });
+}
+
+function openMenu() {
+  if (!menuButton || !mobileNav) return;
+  menuButton.setAttribute('aria-expanded', 'true');
+  mobileNav.setAttribute('aria-hidden', 'false');
+  mobileNav.classList.add('is-open');
+  mobileNavBackdrop?.classList.add('is-open');
+  lockPageForMenu();
+  window.setTimeout(() => mobileNavClose?.focus(), prefersReducedMotion ? 0 : 220);
+}
+
+function closeMenu({ restoreFocus = false } = {}) {
+  if (!menuButton || !mobileNav) return;
+  const wasOpen = mobileNav.classList.contains('is-open');
+  menuButton.setAttribute('aria-expanded', 'false');
+  mobileNav.setAttribute('aria-hidden', 'true');
+  mobileNav.classList.remove('is-open');
+  mobileNavBackdrop?.classList.remove('is-open');
+  if (wasOpen || document.body.classList.contains('menu-open')) unlockPageFromMenu();
+  if (restoreFocus) window.setTimeout(() => menuButton.focus(), prefersReducedMotion ? 0 : 220);
+}
+
+menuButton?.addEventListener('click', openMenu);
+mobileNavClose?.addEventListener('click', () => closeMenu());
 
 mobileNav?.querySelectorAll('a').forEach((link) => {
-  link.addEventListener('click', closeMenu);
+  link.addEventListener('click', () => closeMenu());
 });
 
 window.addEventListener('resize', () => {
-  if (window.innerWidth > 820) closeMenu();
+  if (window.innerWidth > 820 && mobileNav?.classList.contains('is-open')) closeMenu();
 });
-
 
 // ---------- Local MP4 preview system ----------
 const cards = [...document.querySelectorAll('.project-card[data-video-src]')];
@@ -330,3 +375,29 @@ window.addEventListener('pageshow', () => {
 
   syncMode();
 })();
+
+// ---------- Longevity case-study embedded research image sizing ----------
+(() => {
+  const researchPhoto = document.querySelector('.case-image-frame--research-photo img');
+  const framedPortrait = document.querySelector('.case-image-frame--portrait img');
+  if (!researchPhoto || !framedPortrait) return;
+
+  let resizeFrame = 0;
+
+  const syncResearchImageHeights = () => {
+    cancelAnimationFrame(resizeFrame);
+    resizeFrame = requestAnimationFrame(() => {
+      const photoHeight = researchPhoto.getBoundingClientRect().height;
+      if (photoHeight > 0) {
+        document.documentElement.style.setProperty('--research-photo-height', `${Math.round(photoHeight)}px`);
+      }
+    });
+  };
+
+  if (researchPhoto.complete) syncResearchImageHeights();
+  researchPhoto.addEventListener('load', syncResearchImageHeights, { once: true });
+  window.addEventListener('resize', syncResearchImageHeights, { passive: true });
+  window.addEventListener('orientationchange', syncResearchImageHeights, { passive: true });
+  window.visualViewport?.addEventListener('resize', syncResearchImageHeights, { passive: true });
+})();
+
