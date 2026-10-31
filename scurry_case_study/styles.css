@@ -1,0 +1,1203 @@
+
+
+.case-study-page {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  background: #ffffff;
+  color: var(--ink);
+}
+
+@supports (overflow: clip) {
+  .case-study-page,
+  .case-study-main {
+    overflow-x: clip;
+  }
+}
+
+.case-study-page strong {
+  font-weight: 700;
+}
+
+.case-container {
+  width: min(1050px, calc(100% - 48px));
+  margin-inline: auto;
+}
+
+/* ---------- Hero ---------- */
+.case-hero {
+  position: relative;
+  width: 100%;
+  background: var(--blue);
+}
+
+.case-hero-grid {
+  display: block;
+  padding-block: clamp(76px, 9vw, 128px) clamp(68px, 8vw, 108px);
+}
+
+.case-hero-copy {
+  max-width: 930px;
+}
+
+.case-kicker {
+  margin: 0 0 18px;
+  color: var(--paper);
+  font: 700 .72rem/1.2 "IBM Plex Mono", monospace;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+}
+
+.case-hero h1 {
+  margin: 0;
+  max-width: 100%;
+  color: var(--paper);
+  font: 400 clamp(3.9rem, 8.35vw, 8.8rem)/.86 "Bungee", sans-serif;
+  letter-spacing: -.03em;
+  text-transform: uppercase;
+}
+
+.case-deck {
+  max-width: 760px;
+  margin: 28px 0 0;
+  color: var(--paper);
+  font: 650 clamp(1.05rem, 1.55vw, 1.34rem)/1.45 "Inter", sans-serif;
+}
+
+.case-hero-actions,
+.case-summary-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-top: 32px;
+}
+
+
+.case-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 30px;
+  padding: 9px 12px;
+  border: 0;
+  border-radius: 0 10px 0 10px;
+  color: var(--ink);
+  font: 700 .75rem/1 "IBM Plex Mono", monospace;
+  letter-spacing: .055em;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: none;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.case-button--black {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.case-button--yellow {
+  background: var(--yellow);
+  color: var(--ink);
+}
+
+.case-button--cream {
+  background: #ffffff;
+  color: var(--ink);
+}
+
+.case-button--black:hover,
+.case-button--black:focus-visible {
+  transform: translate(-3px, -3px);
+  box-shadow: 6px 6px 0 var(--yellow);
+}
+
+.case-button--yellow:hover,
+.case-button--yellow:focus-visible {
+  transform: translate(-3px, -3px);
+  box-shadow: 6px 6px 0 var(--blue);
+}
+
+.case-button--cream:hover,
+.case-button--cream:focus-visible {
+  transform: translate(-3px, -3px);
+  box-shadow: 6px 6px 0 var(--blue);
+}
+
+.case-text-link {
+  position: relative;
+  padding: 8px 0;
+  font: 700 .72rem/1 "IBM Plex Mono", monospace;
+  letter-spacing: .075em;
+  text-transform: uppercase;
+}
+
+.case-hero .case-text-link {
+  color: var(--paper);
+}
+
+.case-text-link::before,
+.case-text-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+}
+
+.case-text-link::before {
+  background: var(--ink);
+}
+
+.case-hero .case-text-link::before {
+  background: var(--paper);
+}
+
+.case-text-link::after {
+  background: var(--yellow);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform .28s ease;
+}
+
+.case-text-link:hover::after,
+.case-text-link:focus-visible::after {
+  transform: scaleX(1);
+}
+
+/* ---------- Case-study navigation ---------- */
+.case-subnav {
+  position: sticky;
+  top: 76px;
+  z-index: 80;
+  width: 100%;
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.case-subnav-inner {
+  width: min(1050px, calc(100% - 48px));
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(18px, 3vw, 38px);
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  scrollbar-width: none;
+}
+
+.case-subnav-inner::-webkit-scrollbar {
+  display: none;
+}
+
+.case-subnav a {
+  position: relative;
+  flex: 0 0 auto;
+  padding: 15px 0 14px;
+  color: var(--paper);
+  font: 700 .69rem/1 "IBM Plex Mono", monospace;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+}
+
+.case-subnav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 100%;
+  bottom: 8px;
+  height: 2px;
+  background: var(--yellow);
+  transition: right .22s ease;
+}
+
+.case-subnav a:hover::after,
+.case-subnav a:focus-visible::after {
+  right: 0;
+}
+
+/* ---------- Sections ---------- */
+.case-section {
+  scroll-margin-top: 132px;
+  width: 100%;
+  padding: clamp(70px, 8vw, 112px) 0;
+  background: #ffffff;
+}
+
+.case-section--blue {
+  background: #dfeaf5;
+}
+
+.case-section--yellow {
+  background: #f6df83;
+}
+
+.case-section--ink {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.case-section-heading {
+  margin-bottom: clamp(30px, 4vw, 50px);
+}
+
+.case-section-heading h2 {
+  margin: 0;
+  font: 400 clamp(3.35rem, 7.2vw, 7.35rem)/.84 "Bungee", sans-serif;
+  letter-spacing: -.03em;
+  text-transform: uppercase;
+  color: var(--blue);
+}
+
+.case-section--blue .case-section-heading h2,
+.case-section--yellow .case-section-heading h2 {
+  color: var(--ink);
+}
+
+.case-section--ink .case-section-heading h2 {
+  color: var(--yellow);
+}
+
+.case-two-column {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 34px;
+  align-items: start;
+}
+
+.case-copy p,
+.case-callout p,
+.case-task-card li {
+  font-family: "Inter", sans-serif;
+}
+
+.case-copy p {
+  max-width: 64ch;
+  margin: 0 0 18px;
+  font-size: 1rem;
+  line-height: 1.62;
+}
+
+.case-copy p:last-child {
+  margin-bottom: 0;
+}
+
+.case-inline-link {
+  color: inherit;
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--blue-deep);
+}
+
+.case-inline-link:hover,
+.case-inline-link:focus-visible {
+  text-decoration-color: var(--yellow);
+}
+
+
+.case-callout {
+  display: grid;
+  gap: 28px;
+  padding: 28px;
+  border: 0;
+  border-radius: 22px;
+  background: #dfeaf5;
+  box-shadow: none;
+}
+
+.case-callout h3,
+.case-task-card h3 {
+  margin: 0 0 10px;
+  font: 900 1.12rem/1.1 "Archivo Black", sans-serif;
+  letter-spacing: -.03em;
+}
+
+.case-callout p {
+  margin: 0;
+  font-size: .96rem;
+  line-height: 1.62;
+}
+
+/* ---------- Media ---------- */
+.case-video-frame {
+  margin: 0 0 34px;
+  overflow: hidden;
+  border: 0;
+  border-radius: 26px;
+  background: var(--ink);
+  box-shadow: none;
+}
+
+.case-video-frame video {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: var(--ink);
+  pointer-events: none;
+}
+
+.case-image-frame {
+  margin: 0;
+  border: 0;
+  border-radius: 18px;
+  overflow: hidden;
+  background: transparent;
+  box-shadow: none;
+}
+
+.case-image-frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 18px;
+}
+
+
+.case-storyboard {
+  display: block;
+  margin: 24px 0 24px;
+}
+
+.case-image-frame--storyboard {
+  width: min(100%, 285px);
+  max-width: 100%;
+  overflow: visible;
+}
+
+.case-image-frame--storyboard img {
+  width: 100%;
+  height: auto;
+  max-height: none;
+  margin: 0;
+  object-fit: contain;
+  border-radius: 18px;
+}
+
+.case-research-portraits {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+  align-items: start;
+  margin-top: 24px;
+}
+
+.case-research-portraits .case-image-frame,
+.case-research-portraits .case-image-frame img {
+  width: 100%;
+  height: auto;
+}
+
+.case-image-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+  margin-top: 34px;
+}
+
+.case-image-grid--research {
+  justify-items: center;
+  align-items: center;
+}
+
+.case-image-grid--research .case-image-frame {
+  width: 100%;
+}
+
+.case-image-grid--research .case-image-frame--portrait img {
+  height: 350px;
+  width: auto;
+  max-width: 100%;
+  margin-inline: auto;
+  object-fit: contain;
+}
+
+.case-two-column--visual {
+  grid-template-columns: 1fr 1fr;
+}
+
+.case-visual-collage {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  align-items: stretch;
+  margin: 8px 0 28px;
+}
+
+.case-image-frame--inspo {
+  align-self: stretch;
+}
+
+.case-image-frame--inspo img {
+  height: 100%;
+  object-fit: contain;
+}
+
+.case-scene-stack {
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.case-scene-stack .case-image-frame,
+.case-scene-stack .case-image-frame img {
+  min-height: 0;
+  height: 100%;
+}
+
+.case-scene-stack .case-image-frame img {
+  object-fit: contain;
+}
+
+.case-task-card {
+  margin-top: 30px;
+  padding: 24px 25px 22px;
+  border: 0;
+  border-radius: 20px;
+  background: #dfeaf5;
+  box-shadow: none;
+  color: var(--ink);
+}
+
+.case-task-card--blue {
+  background: #dfeaf5;
+}
+
+.case-task-card ul {
+  margin: 15px 0 0;
+  padding-left: 20px;
+}
+
+.case-task-card li {
+  margin-bottom: 10px;
+  font-size: .94rem;
+  line-height: 1.55;
+}
+
+.case-task-card li:last-child {
+  margin-bottom: 0;
+}
+
+.case-section--ink .case-copy p {
+  color: var(--paper);
+}
+
+.case-summary-actions {
+  margin-top: 42px;
+}
+
+/* ---------- Tablet / mobile ---------- */
+@media (max-width: 900px) {
+  .case-two-column,
+  .case-two-column--visual {
+    grid-template-columns: 1fr;
+  }
+
+  .case-two-column {
+    gap: 34px;
+  }
+
+  .case-subnav-inner {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 700px) {
+  .case-container,
+  .case-subnav-inner {
+    width: min(100% - 32px, 1050px);
+  }
+
+  .case-image-grid,
+  .case-visual-collage {
+    grid-template-columns: 1fr;
+  }
+
+  .case-scene-stack {
+    grid-template-rows: auto;
+  }
+
+  .case-image-frame--inspo img,
+  .case-scene-stack .case-image-frame,
+  .case-scene-stack .case-image-frame img {
+    height: auto;
+  }
+
+  .case-image-grid--research .case-image-frame--portrait img {
+    height: auto;
+    width: min(78%, 340px);
+  }
+
+  .case-image-frame--storyboard {
+    width: min(82%, 270px);
+  }
+}
+
+@media (max-width: 560px) {
+  .case-hero-grid {
+    padding-block: 56px 64px;
+  }
+
+  .case-hero h1 {
+    font-size: clamp(2.9rem, 14.4vw, 4.9rem);
+    line-height: .92;
+    letter-spacing: -.03em;
+  }
+
+  .case-deck {
+    margin-top: 22px;
+    font-size: .98rem;
+  }
+
+  .case-subnav-inner {
+    gap: 20px;
+  }
+
+  .case-subnav a {
+    padding-block: 13px 12px;
+    font-size: .64rem;
+  }
+
+  .case-hero-actions,
+  .case-summary-actions {
+    align-items: stretch;
+  }
+
+  .case-button {
+    width: 100%;
+  }
+
+  .case-text-link {
+    width: fit-content;
+  }
+
+  .case-section {
+    scroll-margin-top: 126px;
+    padding-block: 54px;
+  }
+
+  .case-section-heading {
+    margin-bottom: 30px;
+  }
+
+  .case-section-heading h2 {
+    font-size: clamp(2.8rem, 13.2vw, 4.5rem);
+    line-height: .88;
+    letter-spacing: -.03em;
+  }
+
+  .case-callout,
+  .case-task-card {
+    padding: 22px;
+    border-radius: 18px;
+  }
+
+  .case-video-frame {
+    border-radius: 18px;
+  }
+
+  .case-image-frame,
+  .case-image-frame img,
+  .case-image-frame--storyboard img {
+    border-radius: 14px;
+  }
+
+  .case-copy p {
+    font-size: .98rem;
+  }
+}
+
+
+@media (hover: none), (pointer: coarse) {
+  .case-subnav a:hover::after,
+  .case-text-link:hover::after {
+    right: 100%;
+    transform: scaleX(0);
+  }
+
+  .case-button:hover,
+  .case-button:focus {
+    transform: none !important;
+    box-shadow: none !important;
+  }
+
+  .case-button--yellow:active,
+  .case-button--cream:active {
+    transform: translate(-3px, -3px) !important;
+    box-shadow: 6px 6px 0 var(--blue) !important;
+  }
+
+  .case-button--black:active {
+    transform: translate(-3px, -3px) !important;
+    box-shadow: 6px 6px 0 var(--yellow) !important;
+  }
+}
+
+
+@supports (padding-left: max(0px)) {
+  @media (orientation: landscape) and (hover: none) {
+    .case-study-main,
+    .case-hero,
+    .case-section,
+    .case-subnav {
+      width: 100%;
+      max-width: none;
+    }
+
+    .case-container,
+    .case-subnav-inner {
+      width: 100%;
+      max-width: 1050px;
+      padding-left: max(20px, env(safe-area-inset-left));
+      padding-right: max(20px, env(safe-area-inset-right));
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .case-subnav a::after,
+  .case-button,
+  .case-text-link::after {
+    transition: none;
+  }
+}
+
+
+@media (orientation: landscape) and (max-height: 650px) and (hover: none),
+       (orientation: landscape) and (max-height: 650px) and (pointer: coarse) {
+  html.is-short-landscape-phone body.case-study-page .site-header,
+  html.is-short-landscape-phone body.case-study-page .site-header.is-scroll-hidden {
+    position: sticky !important;
+    top: 0 !important;
+    transform: none !important;
+  }
+
+  html.is-short-landscape-phone body.case-study-page .case-study-main {
+    padding-top: 0 !important;
+  }
+
+  html.is-short-landscape-phone body.case-study-page .case-subnav {
+    top: 76px;
+  }
+}
+
+
+.case-copy > figure,
+.case-copy .case-storyboard,
+.case-copy .case-research-portraits .case-image-frame {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.case-image-frame--storyboard {
+  margin-inline: auto;
+}
+
+.case-research-portraits {
+  justify-items: center;
+}
+
+.case-research-portraits .case-image-frame {
+  width: 100%;
+  max-width: 100%;
+}
+
+.case-research-portraits .case-image-frame img {
+  display: block;
+  max-width: 100%;
+  margin-inline: auto;
+}
+
+.case-research-portraits .case-image-frame--research-photo img {
+  width: 100%;
+  height: auto;
+}
+
+.case-research-portraits .case-image-frame--portrait img {
+  width: auto;
+  max-width: 100%;
+  height: var(--research-photo-height, auto);
+  object-fit: contain;
+}
+
+
+
+@media (max-width: 820px) {
+  .case-subnav {
+    display: none !important;
+  }
+
+  .case-section {
+    scroll-margin-top: 92px;
+  }
+
+  .case-hero-actions,
+  .case-summary-actions {
+    align-items: flex-start;
+  }
+
+  .case-button {
+    width: fit-content !important;
+    max-width: 100%;
+    align-self: flex-start;
+    flex: 0 0 auto;
+  }
+}
+
+
+
+@media (hover: none), (pointer: coarse) {
+  .case-subnav {
+    display: none !important;
+  }
+
+  .case-section {
+    scroll-margin-top: 92px;
+  }
+}
+
+/* ========================================================
+   Scurry case study — project-specific layouts and visuals.
+   Shared typography, navigation, sections, and footer follow
+   the Longevity case study and the portfolio's styles.css.
+   ======================================================== */
+
+.scurry-page .case-section-heading h2 {
+  font-size: clamp(3.1rem, 6.65vw, 6.8rem);
+  overflow-wrap: anywhere;
+}
+
+.scurry-page .case-subnav-inner {
+  gap: clamp(14px, 2vw, 28px);
+}
+
+/* Slightly roomier than Longevity, but less spacious than the previous Scurry iteration. */
+.scurry-page .scurry-hero-grid {
+  padding-top: clamp(93px, 10.2vw, 145px);
+  padding-bottom: clamp(89px, 9.25vw, 132px);
+}
+
+.scurry-page .case-hero-copy {
+  max-width: 930px;
+}
+
+.scurry-page .case-callout {
+  gap: 22px;
+}
+
+.scurry-page .case-callout > div + div {
+  border-top: 1px solid rgba(17,17,17,.18);
+  padding-top: 18px;
+}
+
+.scurry-section-intro {
+  margin-bottom: 30px;
+}
+
+.scurry-logo-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.scurry-logo-card,
+.scurry-app-figure,
+.scurry-murry-card,
+.scurry-video-figure,
+.scurry-leadership-figure,
+.scurry-early-murry {
+  min-width: 0;
+  margin: 0;
+}
+
+.scurry-logo-card a,
+.scurry-app-figure a,
+.scurry-early-murry a,
+.scurry-leadership-figure a {
+  display: block;
+}
+
+.scurry-logo-card a:focus-visible,
+.scurry-app-figure a:focus-visible,
+.scurry-early-murry a:focus-visible,
+.scurry-leadership-figure a:focus-visible {
+  outline: 3px solid var(--blue-deep);
+  outline-offset: 4px;
+  border-radius: 18px;
+}
+
+.scurry-logo-art {
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  display: grid;
+  place-items: center;
+  padding: 12%;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.scurry-logo-art--white {
+  background: rgba(255,255,255,.82);
+}
+
+.scurry-logo-card--selected .scurry-logo-art {
+  background: #fff;
+  outline: 3px solid var(--yellow);
+  outline-offset: -3px;
+}
+
+.scurry-logo-art img {
+  display: block;
+  width: 100%;
+  max-height: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.scurry-logo-card figcaption,
+.scurry-app-figure figcaption,
+.scurry-murry-card figcaption {
+  padding-top: 14px;
+  font-size: .81rem;
+  line-height: 1.5;
+  color: var(--ink);
+}
+
+.scurry-logo-card figcaption strong,
+.scurry-murry-card figcaption strong {
+  display: block;
+  font: 700 .72rem/1.35 "IBM Plex Mono", monospace;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  margin-bottom: 5px;
+}
+
+.scurry-logo-card figcaption span,
+.scurry-murry-card figcaption span {
+  display: block;
+}
+
+.scurry-after-grid {
+  max-width: 730px;
+  margin: 30px 0 0;
+  font: 500 1rem/1.62 "Inter", sans-serif;
+}
+
+.scurry-direction-panel {
+  overflow: hidden;
+  border-radius: 22px;
+  background: #f0f6ff;
+  padding: 25px;
+}
+
+.scurry-direction-head {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.scurry-small-label {
+  font: 700 .64rem/1.4 "IBM Plex Mono", monospace;
+  letter-spacing: .13em;
+}
+
+.scurry-direction-head strong {
+  font: 900 clamp(1.6rem, 3vw, 2.7rem)/1 "Archivo Black", sans-serif;
+  letter-spacing: -.045em;
+}
+
+.scurry-direction-head strong span { color: #1687d8; }
+
+.scurry-swatch-row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.scurry-swatch {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  min-height: 160px;
+  border-radius: 10px;
+  padding: 10px;
+  overflow: hidden;
+}
+
+.scurry-swatch span {
+  color: white;
+  font: 700 .54rem/1.2 "IBM Plex Mono", monospace;
+  letter-spacing: .025em;
+  overflow-wrap: anywhere;
+}
+
+.scurry-swatch--navy { background: #0a1a2a; }
+.scurry-swatch--cobalt { background: #085ac0; }
+.scurry-swatch--electric { background: #02a8ea; }
+
+.scurry-direction-panel > p {
+  margin: 18px 0 0;
+  font-size: .91rem;
+  line-height: 1.58;
+}
+
+.scurry-website-note {
+  margin-top: 0;
+  background: rgba(255,255,255,.72);
+  align-self: start;
+}
+
+.scurry-website-note p {
+  margin: 0 0 20px;
+  font-size: .96rem;
+  line-height: 1.62;
+}
+
+.scurry-inline-action {
+  display: inline-block;
+  font: 700 .72rem/1.3 "IBM Plex Mono", monospace;
+  color: var(--blue-deep);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.scurry-inline-action:hover,
+.scurry-inline-action:focus-visible {
+  color: var(--ink);
+}
+
+.scurry-video-figure {
+  margin-top: 36px;
+}
+
+.scurry-demo-frame {
+  margin: 0;
+  border-radius: 24px;
+  background: #061622;
+}
+
+.scurry-demo-frame video {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 720px;
+  object-fit: contain;
+  pointer-events: none !important;
+  background: #061622;
+}
+
+.scurry-video-figure figcaption,
+.scurry-early-murry figcaption,
+.scurry-leadership-figure figcaption {
+  margin-top: 12px;
+  color: #414141;
+  font: 500 .79rem/1.5 "Inter", sans-serif;
+}
+
+/* Independently sized app images: a small transfer strip and a larger core-screen study. */
+.scurry-app-layout {
+  display: grid;
+  grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+  gap: clamp(20px, 3.5vw, 44px);
+  align-items: start;
+}
+
+.scurry-app-figure {
+  margin: 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Each caption is attached to its own image, not visually aligned with the
+   other column’s much taller/shorter artwork. */
+.scurry-app-figure a {
+  display: block;
+  background: #f5f8fc;
+  border-radius: 22px 22px 0 0;
+  overflow: hidden;
+}
+
+.scurry-app-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Transfer flow: about one-third its previous displayed image height (80px vs 240px).
+   Click through to see the full-resolution, uncropped artwork. */
+.scurry-app-figure--transfer a {
+  width: min(100%, 187px);
+  max-width: 187px;
+  margin: 0 auto;
+  padding: 0;
+}
+.scurry-app-figure--transfer figcaption {
+  width: min(100%, 187px);
+  max-width: 187px;
+  margin: 0 auto;
+}
+
+/* Core screens: 1.5x v3's 340px width = 510px on a roomy desktop. */
+.scurry-app-figure--overview a {
+  width: min(100%, 510px);
+  max-width: 510px;
+  margin: 0 auto;
+}
+.scurry-app-figure--overview figcaption {
+  width: min(100%, 510px);
+  max-width: 510px;
+  margin: 0 auto;
+}
+
+.scurry-app-figure figcaption {
+  padding: 12px 14px 14px;
+  background: #f5f8fc;
+  border-radius: 0 0 18px 18px;
+  color: var(--ink);
+  font: 500 .77rem/1.5 "Inter", sans-serif;
+}
+
+.scurry-app-figure figcaption strong {
+  display: block;
+  margin: 0 0 5px;
+  font: 700 .69rem/1.2 "IBM Plex Mono", monospace;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+.scurry-app-figure figcaption span { display: block; }
+
+.scurry-zoom-hint {
+  margin: 16px 0 0;
+  color: #686868;
+  font: 600 .67rem/1.4 "IBM Plex Mono", monospace;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+}
+
+.scurry-early-murry {
+  background: rgba(255,255,255,.86);
+  padding: 16px;
+  border-radius: 20px;
+}
+
+.scurry-early-murry img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 300px;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+.scurry-early-murry figcaption { margin: 10px 0 0; }
+
+.scurry-murry-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 32px;
+}
+
+.scurry-murry-card {
+  overflow: hidden;
+  padding: 14px 14px 18px;
+  border-radius: 22px;
+  background: #ffffff;
+}
+
+.scurry-murry-art {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 1 / 1;
+  padding: 7%;
+  border-radius: 12px;
+  background: #edf7ff;
+}
+
+.scurry-murry-art img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.scurry-murry-card figcaption { padding: 14px 5px 0; }
+
+.scurry-murry-use {
+  max-width: 790px;
+  margin-top: 46px;
+}
+
+.scurry-small-heading {
+  margin: 0 0 16px;
+  font: 900 clamp(1.5rem, 2.5vw, 2.25rem)/1.1 "Archivo Black", sans-serif;
+  letter-spacing: -.04em;
+}
+
+.scurry-leadership-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+}
+
+.scurry-motion-grid {
+  align-items: center;
+}
+
+.scurry-leadership-figure {
+  min-width: 0;
+}
+
+@media (max-width: 1000px) {
+  .scurry-logo-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .scurry-logo-art { aspect-ratio: 1.4 / 1; padding: 8%; }
+}
+
+@media (max-width: 900px) {
+  .scurry-app-layout { grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); }
+  .scurry-murry-use { margin-top: 32px; }
+}
+
+@media (max-width: 700px) {
+  .scurry-page .case-section-heading h2 { font-size: clamp(2.65rem, 11.5vw, 5rem); }
+  .scurry-app-layout { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+  /* Preserve the user-requested relative sizing on smaller screens too. */
+  .scurry-app-figure--transfer a { width: min(100%, 187px); }
+  .scurry-app-figure--overview a { width: min(100%, 510px); }
+  .scurry-murry-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 560px) {
+  .scurry-page .scurry-hero-grid {
+    padding-top: 70px;
+    padding-bottom: 80px;
+  }
+}
+
+@media (max-width: 500px) {
+  .scurry-logo-grid { gap: 12px; }
+  .scurry-logo-card figcaption { font-size: .75rem; }
+  .scurry-logo-card figcaption strong { font-size: .66rem; }
+  .scurry-logo-art { aspect-ratio: 1 / 1; padding: 9%; }
+  .scurry-swatch-row { gap: 5px; }
+  .scurry-swatch { min-height: 115px; padding: 7px; }
+  .scurry-swatch span { font-size: .49rem; }
+  .scurry-direction-panel { padding: 18px; }
+  .scurry-demo-frame { border-radius: 18px; }
+  .scurry-murry-grid { grid-template-columns: 1fr; }
+  .scurry-murry-art { aspect-ratio: 5 / 3; padding: 5%; }
+  .scurry-murry-art img { max-height: 220px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scurry-page a { scroll-behavior: auto; }
+}

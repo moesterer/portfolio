@@ -1,0 +1,123 @@
+/* Sonara case study — layout follows the Longevity/Scurry portfolio case-study system. */
+.case-study-page {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  background: #fff;
+  color: var(--ink);
+}
+@supports (overflow: clip) {
+  .case-study-page, .case-study-main { overflow-x: clip; }
+}
+.case-study-page strong { font-weight: 700; }
+.case-container { width: min(1050px, calc(100% - 48px)); margin-inline: auto; }
+.case-study-page img { display:block; max-width: 100%; height: auto; }
+.case-study-page figure { margin: 0; }
+
+/* The same blue hero, type, padding and buttons as the other case studies. */
+.case-hero { position:relative; width:100%; background:var(--blue); }
+.case-hero-grid { display:block; padding-block: clamp(76px, 9vw, 128px) clamp(68px, 8vw, 108px); }
+.case-hero-copy { max-width:930px; }
+.case-kicker { margin:0 0 18px; color:var(--paper); font:700 .72rem/1.2 "IBM Plex Mono",monospace; letter-spacing:.13em; text-transform:uppercase; }
+.case-hero h1 { margin:0; max-width:100%; color:var(--paper); font:400 clamp(3.9rem, 8.35vw, 8.8rem)/.86 "Bungee",sans-serif; letter-spacing:-.03em; text-transform:uppercase; }
+.case-deck { max-width:760px; margin:28px 0 0; color:var(--paper); font:650 clamp(1.05rem,1.55vw,1.34rem)/1.45 "Inter",sans-serif; }
+.case-hero-actions, .case-summary-actions { display:flex; align-items:center; flex-wrap:wrap; gap:18px; margin-top:32px; }
+.case-button { display:inline-flex; align-items:center; justify-content:center; min-height:30px; padding:9px 12px; border:0; border-radius:0 10px 0 10px; color:var(--ink); font:700 .75rem/1 "IBM Plex Mono",monospace; letter-spacing:.055em; text-transform:uppercase; cursor:pointer; box-shadow:none; transition: transform .18s ease, box-shadow .18s ease; }
+.case-button--black { background:var(--ink); color:var(--paper); }
+.case-button--cream { background:#fff; color:var(--ink); }
+.case-button--yellow { background:var(--yellow); color:var(--ink); }
+.case-button--black:hover, .case-button--black:focus-visible { transform:translate(-3px,-3px); box-shadow:6px 6px 0 var(--yellow); }
+.case-button--cream:hover, .case-button--cream:focus-visible, .case-button--yellow:hover, .case-button--yellow:focus-visible { transform:translate(-3px,-3px); box-shadow:6px 6px 0 var(--blue); }
+
+/* Sticky section navigation. */
+.case-subnav { position:sticky; top:76px; z-index:80; width:100%; background:var(--ink); color:var(--paper); }
+.case-subnav-inner { width:min(1050px,calc(100% - 48px)); margin-inline:auto; display:flex; align-items:center; justify-content:space-between; gap:clamp(18px,3vw,38px); overflow-x:auto; overscroll-behavior-inline:contain; scrollbar-width:none; }
+.case-subnav-inner::-webkit-scrollbar { display:none; }
+.case-subnav a { position:relative; flex:0 0 auto; padding:15px 0 14px; color:var(--paper); font:700 .69rem/1 "IBM Plex Mono",monospace; letter-spacing:.07em; text-transform:uppercase; }
+.case-subnav a::after { content:""; position:absolute; left:0; right:100%; bottom:8px; height:2px; background:var(--yellow); transition:right .22s ease; }
+.case-subnav a:hover::after, .case-subnav a:focus-visible::after { right:0; }
+
+/* White / pale blue / yellow section rhythm matches the Longevity layout. */
+.case-section { scroll-margin-top:132px; width:100%; padding:clamp(70px,8vw,112px) 0; background:#fff; }
+.case-section--blue { background:#dfeaf5; }
+.case-section--yellow { background:#f6df83; }
+.case-section--ink { background:var(--ink); color:var(--paper); }
+.case-section-heading { margin-bottom:clamp(30px,4vw,50px); }
+.case-section-heading h2 { margin:0; font:400 clamp(3.35rem,7.2vw,7.35rem)/.84 "Bungee",sans-serif; letter-spacing:-.03em; text-transform:uppercase; color:var(--blue); overflow-wrap:break-word; }
+.case-section--blue .case-section-heading h2, .case-section--yellow .case-section-heading h2 { color:var(--ink); }
+.case-section--ink .case-section-heading h2 { color:var(--yellow); }
+.case-two-column { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:34px; align-items:start; }
+.case-copy p, .case-copy li { margin:0; color:inherit; font:400 1rem/1.62 "Inter",sans-serif; }
+.case-copy > * + * { margin-top:18px; }
+.case-copy p { max-width:64ch; }
+.case-callout { display:grid; gap:28px; padding:28px; background:#dfeaf5; border:0; border-radius:22px; box-shadow:none; }
+.case-section--blue .case-callout { background:#fff; }
+.case-callout h3 { margin:0 0 10px; font:900 1.12rem/1.1 "Archivo Black",sans-serif; letter-spacing:-.03em; color:var(--ink); }
+.case-callout p { margin:0; font:400 .96rem/1.62 "Inter",sans-serif; }
+.case-lead { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:34px; margin-bottom:34px; }
+.case-lead p { max-width:64ch; }
+.case-zoom-hint { margin-top:18px; color:#555; font:600 .72rem/1.4 "IBM Plex Mono",monospace; text-transform:uppercase; letter-spacing:.06em; }
+.case-section--ink .case-zoom-hint { color:var(--paper); }
+.sonara-overview-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:34px; align-items:start; }
+.sonara-concept-grid { max-width:900px; }
+.sonara-concept-grid .case-copy { display:grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap:20px 34px; }
+.sonara-concept-grid .case-copy p { margin:0; }
+.sonara-concept-grid .case-copy p:last-child { grid-column:1 / -1; max-width:74ch; }
+
+/* Each image and its caption remain a single figure so labeling stays correct. */
+.sonara-logo-grid, .sonara-poster-grid, .sonara-products-grid, .sonara-pattern-grid, .sonara-ads-grid { display:grid; gap:22px; }
+.sonara-logo-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+.sonara-poster-grid { grid-template-columns:repeat(2,minmax(0,1fr)); margin-top:34px; }
+.sonara-products-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+.sonara-pattern-grid { max-width:1050px; margin-inline:auto; grid-template-columns:1fr; }
+.sonara-ads-only { grid-template-columns:1fr; max-width:680px; margin-inline:auto; }
+.case-figure-card { display:flex; flex-direction:column; gap:12px; min-width:0; background:transparent; padding:0; border:0; border-radius:0; box-shadow:none; }
+.case-figure-card img { display:block; width:100%; height:auto; border-radius:18px; }
+.case-figure-card figcaption { display:flex; flex-direction:column; gap:4px; }
+.case-figure-card figcaption strong { font:900 .98rem/1.2 "Archivo Black",sans-serif; letter-spacing:-.02em; color:var(--ink); }
+.case-figure-card figcaption span, .case-figure-card figcaption p { margin:0; color:var(--ink); font:400 .94rem/1.58 "Inter",sans-serif; }
+.case-section--ink .case-figure-card figcaption strong, .case-section--ink .case-figure-card figcaption span { color:var(--paper); }
+.sonara-logo-grid .case-figure-card img { background:#fff; aspect-ratio:1; object-fit:contain; }
+.sonara-poster-sketches { max-width:780px; margin:0 auto 38px !important; }
+.sonara-poster-sketches img { background:#fff; }
+.sonara-poster-grid .case-figure-card img, .sonara-ads-grid .case-figure-card img, .sonara-products-grid .case-figure-card img { background:#fff; }
+.sonara-small-heading { margin:0 0 12px; color:var(--ink); font:900 1.12rem/1.1 "Archivo Black",sans-serif; letter-spacing:-.03em; }
+.sonara-process-list { margin:0; padding-left:20px; display:grid; gap:10px; }
+.sonara-process-list li::marker { color:var(--blue-deep); }
+.case-summary-actions { margin-top:42px; }
+
+/* Responsive layout and mobile navigation follow the other case studies. */
+@media (max-width:900px) {
+  .case-two-column, .sonara-overview-grid, .case-lead { grid-template-columns:1fr; }
+  .case-subnav-inner { justify-content:flex-start; }
+}
+@media (max-width:820px), (hover:none), (pointer:coarse) {
+  .case-subnav { display:none !important; }
+  .case-section { scroll-margin-top:92px; }
+}
+@media (max-width:700px) {
+  .case-container, .case-subnav-inner { width:min(100% - 32px, 1050px); }
+  .sonara-poster-grid, .sonara-products-grid, .sonara-logo-grid { grid-template-columns:1fr; }
+  .sonara-concept-grid .case-copy { grid-template-columns:1fr; }
+  .sonara-concept-grid .case-copy p:last-child { grid-column:auto; }
+}
+@media (max-width:560px) {
+  .case-hero-grid { padding-block:56px 64px; }
+  .case-hero h1 { font-size:clamp(2.9rem,14.4vw,4.9rem); line-height:.92; }
+  .case-deck { margin-top:22px; font-size:.98rem; }
+  .case-section { padding-block:54px; }
+  .case-section-heading { margin-bottom:30px; }
+  .case-section-heading h2 { font-size:clamp(2.8rem,13.2vw,4.5rem); line-height:.88; }
+  .case-copy p { font-size:.98rem; }
+  .case-callout { padding:22px; border-radius:18px; }
+  .case-figure-card img { border-radius:14px; }
+  .case-hero-actions, .case-summary-actions { align-items:flex-start; }
+  .case-button { width:fit-content; max-width:100%; }
+}
+@media (hover:none),(pointer:coarse) {
+  .case-button:hover, .case-button:focus { transform:none !important; box-shadow:none !important; }
+  .case-button:active { transform:translate(-3px,-3px) !important; box-shadow:6px 6px 0 var(--blue) !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .case-button, .case-subnav a::after { transition:none; }
+}
