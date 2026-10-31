@@ -998,10 +998,10 @@
   font: 500 .79rem/1.5 "Inter", sans-serif;
 }
 
-/* Independently sized app images: a small transfer strip and a larger core-screen study. */
+/* Two balanced columns let the transfer sequence reach its intended 2.5x width. */
 .scurry-app-layout {
   display: grid;
-  grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: clamp(20px, 3.5vw, 44px);
   align-items: start;
 }
@@ -1030,29 +1030,28 @@
   object-fit: contain;
 }
 
-/* Transfer flow: about one-third its previous displayed image height (80px vs 240px).
-   Click through to see the full-resolution, uncropped artwork. */
+/* Transfer flow: 187px × 2.5 ≈ 468px; preserve the full image and its caption. */
 .scurry-app-figure--transfer a {
-  width: min(100%, 187px);
-  max-width: 187px;
+  width: min(100%, 468px);
+  max-width: 468px;
   margin: 0 auto;
   padding: 0;
 }
 .scurry-app-figure--transfer figcaption {
-  width: min(100%, 187px);
-  max-width: 187px;
+  width: min(100%, 468px);
+  max-width: 468px;
   margin: 0 auto;
 }
 
-/* Core screens: 1.5x v3's 340px width = 510px on a roomy desktop. */
+/* Core screens: half of the previous 510px width = 255px. */
 .scurry-app-figure--overview a {
-  width: min(100%, 510px);
-  max-width: 510px;
+  width: min(100%, 255px);
+  max-width: 255px;
   margin: 0 auto;
 }
 .scurry-app-figure--overview figcaption {
-  width: min(100%, 510px);
-  max-width: 510px;
+  width: min(100%, 255px);
+  max-width: 255px;
   margin: 0 auto;
 }
 
@@ -1163,7 +1162,7 @@
 }
 
 @media (max-width: 900px) {
-  .scurry-app-layout { grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); }
+  .scurry-app-layout { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .scurry-murry-use { margin-top: 32px; }
 }
 
@@ -1171,8 +1170,8 @@
   .scurry-page .case-section-heading h2 { font-size: clamp(2.65rem, 11.5vw, 5rem); }
   .scurry-app-layout { grid-template-columns: minmax(0, 1fr); gap: 28px; }
   /* Preserve the user-requested relative sizing on smaller screens too. */
-  .scurry-app-figure--transfer a { width: min(100%, 187px); }
-  .scurry-app-figure--overview a { width: min(100%, 510px); }
+  .scurry-app-figure--transfer a { width: min(100%, 468px); }
+  .scurry-app-figure--overview a { width: min(100%, 255px); }
   .scurry-murry-grid { grid-template-columns: 1fr 1fr; }
 }
 
